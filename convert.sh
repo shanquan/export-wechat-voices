@@ -18,7 +18,7 @@ RESET="$(tput sgr 0 2>/dev/null || echo '\e[0m')"
 
 function convert(){
 [ ! -d "$1" ]&&echo -e "${RED}[Error]${RESET} Input folder not found, please check it."&&exit
-for file in `find $1 -name "*.amr"`
+for file in `find $1 -name "*.amr" -o -name "*.silk"`
 do
  if [ -d $1"/"$file ]
  then
@@ -35,7 +35,9 @@ do
  if [ ${FILE_NAME:0:5} != "msg__" ];then
    #echo "$formart_date,$FILE_NAME" >> output/data.log
    #cp $file "output/$formart_date.amr"
-   transform $file "$formart_date"
+	 i=0
+	 while [ -f "output/$formart_date.$i.mp3" ]; do i=$[$i+1] ;done
+	 transform $file "$formart_date.$i"
  fi
  fi
 done
