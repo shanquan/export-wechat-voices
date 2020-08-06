@@ -15,11 +15,12 @@ My family used to send lots of voice messages on wechat, Then I've found it's ha
 ## How To Use
 1. copy voice Directory from your phone to PC.
     The directory locations are as below for now:
-    - For Android:/storage/emulated/0/tencent/MicroMsg/c5bxxx/voice2/../xxx.amr
+    - For Android:/storage/emulated/0/tencent/MicroMsg/c5bxxx/voice2/../msg_xxx.amr
+    - For Android(wechat>=7.0.16):/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/c5bxxx/voice2/../msg_xxx.amr
 2. `git clone https://github.com/shanquan/export-wechat-voices & cd export-wechat-voices`
 3. `sh convert.sh pathToVoiceDir`
 
-After the upper command, you will see your mp3 voice files in the `output` directory. 
+After the above commands, you will see your mp3 voice files in the `output` directory. 
 
 ## 中文说明
 本项目基于[silk-v3-decoder](https://github.com/kn007/silk-v3-decoder)开发，以支持将微信里的所有语音文件按时间顺序导出mp3格式。
